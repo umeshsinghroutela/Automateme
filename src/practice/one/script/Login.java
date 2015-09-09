@@ -14,17 +14,19 @@ public class Login
 {
 
 	
-		public static void main(String[] args) throws InterruptedException {
-			 String jacobDllVersionToUse;
+		public static void main(String[] args) throws InterruptedException 
+		{
+			 String dllVersionToUse;
 			 if (System.getProperty("sun.arch.data.model").contains("32")){
-			 jacobDllVersionToUse = "jacob-1.18-x86.dll";
+			 dllVersionToUse = "autoIT-1.18-x86.dll";
 			 }
-			 else {
-			 jacobDllVersionToUse = "jacob-1.18-x64.dll";
+			 else
+			 {
+				 dllVersionToUse = "autoIT-1.18-x64.dll";
 			 }
 			 
-			 File file = new File("F:\\Automation JHA project\\Automation\\lib", jacobDllVersionToUse);
-			 System.setProperty(LibraryLoader.JACOB_DLL_PATH, file.getAbsolutePath());
+			 File file = new File("F:\\Automation JHA project\\Automation\\lib", dllVersionToUse);
+			 System.setProperty(LibraryLoader.DLL_NAME_MODIFIER_64_BIT, file.getAbsolutePath());
 						   
 			 WebDriver driver = new FirefoxDriver();
 			 driver.get("http://www.qavalidation.com/p/demo.html");
@@ -37,6 +39,6 @@ public class Login
 			 x.controlClick("File Upload", "", "1") ; //Open button, id is 1
 	
 			 
-			 }
+		}
 }
 

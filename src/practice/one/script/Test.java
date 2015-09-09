@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -19,10 +20,11 @@ public class Test {
 		try 
 		{
 			DesiredCapabilities ffCap =  DesiredCapabilities.firefox();	
-			ffCap.setPlatform(Platform.WINDOWS);
+//			ffCap.setPlatform(Platform.WINDOWS);
 			ffCap.setBrowserName("firefox");
 			ffCap.setVersion("39.0");	
 			
+//			driver = new FirefoxDriver(ffCap);
 			driver = new RemoteWebDriver(new URL("http://192.168.0.103:5556/wd/hub"),ffCap);		
 			driver.get("https://www.google.co.in/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8");
 			driver.manage().timeouts().implicitlyWait( 30, TimeUnit.SECONDS );
@@ -40,7 +42,7 @@ public class Test {
 		
 		WebElement input = driver.findElement(By.id("lst-ib"));
 		
-		input.sendKeys("WHAT ARE YOU DOING IN THIS COMPUTER----- ##  PANKAJ ## ");
+		input.sendKeys("WHAT ARE YOU DOING IN THIS COMPUTER----- ##  PANKAJ ##");
 		
 		try {
 			Thread.sleep(2000);

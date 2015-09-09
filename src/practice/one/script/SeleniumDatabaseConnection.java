@@ -1,9 +1,8 @@
 package practice.one.script;
 
-
-
 import java.sql.Connection;
 import java.sql.DriverManager;
+
 import com.mysql.jdbc.ResultSet;
 import com.mysql.jdbc.Statement;
 
@@ -14,7 +13,7 @@ public class SeleniumDatabaseConnection {
 		Connection conn = null;
 		
 		String url = "jdbc:mysql://localhost:3306/";
-		String dataBaseName = "predict";
+		String dataBaseName = "test_database";
 		String userName = "root";
 		String passWord = "root";
 		
