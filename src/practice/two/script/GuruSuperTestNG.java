@@ -27,4 +27,10 @@ public class GuruSuperTestNG
 		driver.close();
 	}
 	
+	public static WebDriver getDriver()
+	{
+		return driver;
+	}
+	
+	
 }

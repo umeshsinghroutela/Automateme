@@ -4,12 +4,14 @@ package practice.generics;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
-import com.remedyinteractive.scripts.SuperTestNG;
+
+import practice.two.script.GuruSuperTestNG;
 
 
 public class ScreenshotListener extends TestListenerAdapter
@@ -35,7 +37,7 @@ public class ScreenshotListener extends TestListenerAdapter
 			String dest = createFolderForScreenshotsCaptured() 
 								+ nameClass + "-" + nameTest + "-" + sdf.format(date)
 								+ "-screenshot.jpg";
-			File screenshot = ((TakesScreenshot) SuperTestNG.getDriver()).getScreenshotAs(OutputType.FILE);
+			File screenshot = ((TakesScreenshot) GuruSuperTestNG.getDriver()).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(screenshot, new File( dest));
 			System.out.println( "****** Screenshot destination is ******* : " +  dest );
 		} 
