@@ -11,36 +11,35 @@ import jxl.Workbook;
 public class Generics 
 {
 	public String[][] getTableArray(String xlFilePath, String sheetName, String tableName){
-		System.out.println("Inside getTableArray");
-        String[][] tabArray=null;
-        try{
-            Workbook workbook = Workbook.getWorkbook(new File(xlFilePath));
-            Sheet sheet = workbook.getSheet(sheetName);
-            int startRow,startCol, endRow, endCol,ci,cj;
-            Cell tableStart=sheet.findCell(tableName);
-            startRow=tableStart.getRow();
-            startCol=tableStart.getColumn();
+		String[][] tabArray=null;
+		try{
+			Workbook workbook = Workbook.getWorkbook(new File(xlFilePath));
+			Sheet sheet = workbook.getSheet(sheetName);
+			int startRow,startCol, endRow, endCol,ci,cj;
+			Cell tableStart=sheet.findCell(tableName);
+			startRow=tableStart.getRow();
+			startCol=tableStart.getColumn();
 
-            Cell tableEnd= sheet.findCell(tableName, startCol+1,startRow+1, 100, 64000,  false);      
-           
-            endRow=tableEnd.getRow();
-            endCol=tableEnd.getColumn();
-            System.out.println("startRow="+startRow+", endRow="+endRow+", " +
-                    "startCol="+startCol+", endCol="+endCol);
-            tabArray=new String[endRow-startRow-1][endCol-startCol-1];
-            ci=0;
+			Cell tableEnd= sheet.findCell(tableName, startCol+1,startRow+1, 100, 64000,  false);      
 
-            for (int i=startRow+1;i<endRow;i++,ci++){
-                cj=0;
-                for (int j=startCol+1;j<endCol;j++,cj++){
-                    tabArray[ci][cj]=sheet.getCell(j,i).getContents();
-                }
-            }
-        }
-        catch (Exception e)    {
-            System.out.println("Error in getTableArray()");
-        }
+			endRow=tableEnd.getRow();
+			endCol=tableEnd.getColumn();
+			System.out.println("startRow="+startRow+", endRow="+endRow+", " +
+					"startCol="+startCol+", endCol="+endCol);
+			tabArray=new String[endRow-startRow-1][endCol-startCol-1];
+			ci=0;
 
-        return(tabArray);
-    }
+			for (int i=startRow+1;i<endRow;i++,ci++){
+				cj=0;
+				for (int j=startCol+1;j<endCol;j++,cj++){
+					tabArray[ci][cj]=sheet.getCell(j,i).getContents();
+				}
+			}
+		}
+		catch (Exception e)    {
+			System.out.println("Error in getTableArray()");
+		}
+
+		return(tabArray);
+	}
 }
