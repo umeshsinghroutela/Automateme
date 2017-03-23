@@ -11,6 +11,7 @@ import jxl.Workbook;
 public class Generics 
 {
 	public String[][] getTableArray(String xlFilePath, String sheetName, String tableName){
+		System.out.println("Inside getTableArray");
         String[][] tabArray=null;
         try{
             Workbook workbook = Workbook.getWorkbook(new File(xlFilePath));
