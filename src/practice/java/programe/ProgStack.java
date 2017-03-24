@@ -109,7 +109,8 @@ public class ProgStack {
 				break;
 			case 9:
 				i++;
-				System.out.println("Exiting ... ");
+				System.out.println("Exiting ........ ");
+				System.out.println("EXITEDD!!");
 				break;
 			default:
 				System.out.println("Wrong Entry \n ");
