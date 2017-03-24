@@ -40,11 +40,11 @@ public class ProgComparator {
 
 	public static void main(String[] args) {
 		ArrayList<Person> people = new ArrayList<Person>();
-		people.add(new Person(11 , "Umesh Singh Routela"));
-		people.add(new Person(116, "Ganesh"));
-		people.add(new Person(12 , "naveen Singh"));
-		people.add(new Person(12 , "Digar Singh"));
-		people.add(new Person(122, "parwati"));
+		people.add(new Person(11 , "qwerty"));
+		people.add(new Person(116, "Adsa dsadad"));
+		people.add(new Person(12 , "xasdad das"));
+		people.add(new Person(12 , "ZS dsad sadsa d"));
+		people.add(new Person(122, "Kkdsad"));
 
 		//Sort by Alphabatical
 		Collections.sort(people, new Comparator<Person>() {
