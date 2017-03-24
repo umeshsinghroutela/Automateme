@@ -2,9 +2,9 @@ package practice.one.script;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 
 import com.mysql.jdbc.Driver;
-import com.mysql.jdbc.ResultSet;
 import com.mysql.jdbc.Statement;
 
 public class SeleniumDatabaseConnection {
@@ -21,7 +21,7 @@ public class SeleniumDatabaseConnection {
 		try {
 			
 			Class.forName("com.mysql.jdbc.Driver_5.1.5");
-//			Driver d = (Driver) DriverManager.getDriver("com.mysql.jdbc.Driver_5.1.5");
+			Driver d = (Driver) DriverManager.getDriver("com.mysql.jdbc.Driver_5.1.5");
 			conn = DriverManager.getConnection(url+dataBaseName,userName,passWord);
 			
 			String sqlQuery = "Select * from actor";
