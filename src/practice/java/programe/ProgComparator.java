@@ -46,7 +46,7 @@ public class ProgComparator {
 		people.add(new Person(12 , "ZS dsad sadsa d"));
 		people.add(new Person(122, "Kkdsad"));
 
-		//Sort by Alphabatical
+		//Sort by Alphabetical
 		Collections.sort(people, new Comparator<Person>() {
 			@Override
 			public int compare(Person p1, Person p2) {
