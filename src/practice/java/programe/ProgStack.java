@@ -117,9 +117,6 @@ public class ProgStack {
 				break;
 			}
 
-
-
-
 		} while (i==1);
 		s.close(); 
 
