@@ -1,12 +1,14 @@
 package practice.two.script;
 
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import practice.pom.GuruHomePage;
 import practice.pom.MobilePage;
 
-public class GuruTestCase1 extends GuruSuperTestNG
+@Listeners(practice.generics.ScreenshotListener.class)
+public class GuruTestCase1 extends GuruSuperTestNG 
 {
 	@Test
 	public void verifyHomePage()

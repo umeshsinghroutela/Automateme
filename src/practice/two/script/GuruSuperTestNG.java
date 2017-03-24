@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
 
 public class GuruSuperTestNG 
 {
@@ -27,7 +26,7 @@ public class GuruSuperTestNG
 	@AfterClass
 	public void terminateBrowser()
 	{
-		driver.close();
+		driver.quit();
 	}
 
 	public static WebDriver getDriver()
