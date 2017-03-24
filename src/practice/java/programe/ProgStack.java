@@ -1,11 +1,14 @@
 package practice.java.programe;
 
+import java.util.Scanner;
+
 class Stack{
 	private int maxSize;
 	private int top;
 	private String arr[];
 
 	public Stack(int size) {
+		System.out.println("Array Size is "+ size);
 		maxSize = size;
 		top = -1;
 		arr = new String[maxSize];
@@ -35,12 +38,12 @@ class Stack{
 	}
 
 	public String pop() {
-		
+
 		if (isEmpty()) {
 			System.out.println(" Stack is Empty Cannot delete");
 			return null;
 		}
-		
+
 		System.out.println(top);
 		String delvalue = arr[top];
 		arr[top--] = null;
@@ -79,86 +82,45 @@ public class ProgStack {
 
 	public static void main(String[] args) 
 	{
-		Stack stack = new Stack(5);
-		stack.displayElements();
-		stack.push("Data1");
-		stack.push("Data2");
-		stack.push(null);
-		stack.push("Data3");
-		stack.push("Data4");
-		stack.push("Data5");
-		stack.push("Data6");
-		stack.push("Data7");
-		
-		stack.displayElements();
-		System.out.println("-----------------");
-		stack.peep();
-		stack.pop();
-		stack.pop();
-		stack.pop();
-		stack.pop();
-		stack.pop();
-		stack.pop();
-		stack.displayElements();
-		stack.push("Data1");
-		stack.push("Data2");
-		stack.push(null);
-		stack.push("Data3");
-		stack.push("Data4");
-		stack.push("Data5");
-		stack.push("Data6");
-		stack.push("Data7");
-		stack.displayElements();
+		Scanner s = new Scanner(System.in);
+		System.out.println("Please enter the size of Array");
+		int size = s.nextInt();
+		Stack st = new Stack(size);
+		int i=1;
+		do {
+			System.out.println("Enter Your choice 1 to push/ 2 to delete /3 to peep /4 to display /9 to exit");
+			int opt = s.nextInt();
+			s.nextLine();
+			switch (opt) {
+			case 1:
+				System.out.println("Enter the String");
+				String val =s.nextLine();
+				st.push(val);
+				break;
+
+			case 2:
+				st.pop();
+				break;
+			case 3:
+				st.peep();
+				break;
+			case 4:
+				st.displayElements();
+				break;
+			case 9:
+				i++;
+				System.out.println("Exiting ... ");
+				break;
+			default:
+				System.out.println("Wrong Entry \n ");
+				
+				break;
+			}
+
+
+
+
+		} while (i==1);
 
 	}
 }
-
-//output
-//
-//Stack is Empty
-//Item added Data1
-//Item added Data2
-//Please Enter Valid/NonEmpty String
-//Item added Data3
-//Item added Data4
-//Item added Data5
-//Stack is Full .....Cannot add ->Data6
-//Stack is Full .....Cannot add ->Data7
-//Data1
-//Data2
-//Data3
-//Data4
-//Data5
-//-----------------
-//Data5
-//4
-//Iteme Deteled From Stack is =>Data5
-//top 3
-//3
-//Iteme Deteled From Stack is =>Data4
-//top 2
-//2
-//Iteme Deteled From Stack is =>Data3
-//top 1
-//1
-//Iteme Deteled From Stack is =>Data2
-//top 0
-//0
-//Iteme Deteled From Stack is =>Data1
-//top -1
-// Stack is Empty Cannot delete
-//Stack is Empty
-//Item added Data1
-//Item added Data2
-//Please Enter Valid/NonEmpty String
-//Item added Data3
-//Item added Data4
-//Item added Data5
-//Stack is Full .....Cannot add ->Data6
-//Stack is Full .....Cannot add ->Data7
-//Data1
-//Data2
-//Data3
-//Data4
-//Data5
-
