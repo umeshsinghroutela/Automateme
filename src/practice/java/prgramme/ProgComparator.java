@@ -93,3 +93,26 @@ public class ProgComparator {
 		}
 	}
 }
+
+/*O/P
+ * 
+ * Sort by Alphabatical 
+116 :: Adsa dsadad
+122 :: Kkdsad
+11 :: qwerty
+12 :: xasdad das
+12 :: ZS dsad sadsa d
+
+Sort by ID
+11 :: qwerty
+12 :: xasdad das
+12 :: ZS dsad sadsa d
+116 :: Adsa dsadad
+122 :: Kkdsad
+
+Sort by Name Length
+122 :: Kkdsad
+11 :: qwerty
+12 :: xasdad das
+116 :: Adsa dsadad
+12 :: ZS dsad sadsa d*/
