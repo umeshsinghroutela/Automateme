@@ -8,7 +8,6 @@ public class Fibonacci  {
 			System.out.println(fib(i));
 			i++;
 		}
-		
 	}
 
 	private static int fib(int n) {
@@ -22,10 +21,8 @@ public class Fibonacci  {
 		else{
 			return fib(n-2)+fib(n-1);
 		}
-		 
-		
 	}
-}
+} 
 
 
 //0
